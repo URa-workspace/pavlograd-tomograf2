@@ -1,0 +1,90 @@
+/* *-------------- home ----------------- */
+.section__home {
+    height: calc(100vh - 100px);
+    position: relative;
+    z-index: 1;
+}
+
+.section__home::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80));
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80));
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80));
+}
+
+.home__body {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title-home {
+    color: aliceblue;
+    font-weight: 700;
+}
+
+.title-home a {
+    display: inline-block;
+    color: aliceblue;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+}
+
+.title-home a::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background-color: #18b5a4;
+    transition: 0.5s;
+}
+
+.title-home a:hover {
+    color: #18b5a4;
+    transform: scale(1.05);
+}
+
+.title-home a:hover::after {
+    left: 0;
+}
+
+.arrow-down {
+    margin: auto;
+    height: 30px;
+    width: 40px;
+    display: inline-block;
+}
+
+.arrow-down svg {
+    position: relative;
+    z-index: 2;
+    animation: floating-arrow 2s linear 0s infinite alternate none;
+}
+
+.arrow-down:hover svg {
+    animation-play-state: paused;
+}
+
+@keyframes floating-arrow {
+    0% {
+        top: -50%;
+    }
+
+    50% {
+        fill: #555658;
+    }
+
+    100% {
+        top: 50%;
+    }
+}
